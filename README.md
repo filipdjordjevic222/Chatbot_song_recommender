@@ -6,7 +6,7 @@ The Song Recommender is an intelligent music recommendation system designed to d
 
 ## Demo
 
-![Demo](/app/Demo.gif)
+![Demo](/app/DEMO.gif)
 
 
 
