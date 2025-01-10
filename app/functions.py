@@ -56,9 +56,8 @@ def search_spotify_tracks(query, limit=10):
 
 
 #create a function to get necessary columns
-def get_recommendations(search_results):
-    user_selection_index = 0
-    user_selection_track_data= search_results[user_selection_index]
+def get_recommendations(search_results, user_selection_index):
+    user_selection_track_data = search_results[user_selection_index]
 
     #get genre from artist id
     results=spotify.artist(user_selection_track_data['artist_id']) 
@@ -101,6 +100,17 @@ def get_recommendations(search_results):
     # Get the top 10 most popular songs from the same cluster
     top_10_songs = clustered_df_filtered.sort_values(by='popularity', ascending=False).sample(10)
     
+    # Add Spotify URLs for each recommended song
+    def get_spotify_url(row):
+        # Search for the exact song by artist and title
+        query = f"artist:{row['original_artist']} track:{row['original_title']}"
+        results = spotify.search(q=query, type='track', limit=1)
+        
+        if results['tracks']['items']:
+            return f"https://open.spotify.com/track/{results['tracks']['items'][0]['id']}"
+        return None
 
+    top_10_songs['spotify_url'] = top_10_songs.apply(get_spotify_url, axis=1)
+    
     return top_10_songs
 
