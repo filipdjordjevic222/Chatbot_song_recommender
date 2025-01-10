@@ -4,6 +4,11 @@
 
 The Song Recommender is an intelligent music recommendation system designed to deliver personalized song suggestions based on user preferences. Based on the Spotify API, Million Song Dataset and Bilboard Hot 100 to provide user personalaised recommendations. It integrates the Spotify API and the Million Song Dataset, utilizing clustering techniques to group similar songs and suggest tracks based on user preferences.
 
+## Demo
+
+![Demo](/app/DEMO.gif)
+
+
 
 ## Methodology
 
@@ -19,6 +24,8 @@ The Elbow Method and Silhouette Score were used to evaluate and choose the optim
 
 The KMeans algorithm was applied with 11 clusters for song recommendation.
 
+
+![Elbow-silhouette](/app/clustering.png)    
 
 ## Resources
 
