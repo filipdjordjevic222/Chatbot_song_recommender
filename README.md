@@ -37,23 +37,23 @@ Python, Spotify API credentials, spotipy, Streamlit and other dependancies liste
 
 Clone the repository:
 
-git clone <repository-url>
-cd <repository-folder>
+```git clone <repository-url>```
+```cd <repository-folder>```
 
 Install required Python packages:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 Update .env file with your Spotify API credentials:
 
-SPOTIFY_CLIENT_ID=<your-client-id>
+```SPOTIFY_CLIENT_ID=<your-client-id>```
 
-SPOTIFY_CLIENT_SECRET=<your-client-secret>
+```SPOTIFY_CLIENT_SECRET=<your-client-secret>```
 
 You can get these credentials from the Spotify Developer Platform.
 
 Start the application:
 
-streamlit run app.py
+```streamlit run app.py```
 
 
