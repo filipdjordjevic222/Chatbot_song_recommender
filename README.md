@@ -1,4 +1,4 @@
-# Intelligent Song Recommender
+# Song Recommender
 
 ## Overview
 
