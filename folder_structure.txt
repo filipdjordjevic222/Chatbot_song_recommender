@@ -1,0 +1,39 @@
+.
+├── README.md
+├── app
+│   ├── DEMO.gif
+│   ├── clustering.png
+│   ├── functions.py
+│   ├── models
+│   │   └── kmeans_model_11.pkl
+│   ├── recommender_app.py
+│   ├── requirements.txt
+│   └── scaler
+│       ├── standard_scaler.pkl
+│       ├── tracks_minmax_scaler.pkl
+│       └── tracks_standard_scaler.pkl
+├── data
+│   ├── 1_hot100.csv
+│   ├── 2_million_song_subset_raw.csv
+│   ├── 3_combined_clean_dataset.csv
+│   ├── 4_spotify_million_tracks.csv
+│   ├── 5_spotify_tracks_encoded.csv
+│   ├── 6_spotify_tracks_numeric.csv
+│   ├── 7_clustered_dataset.csv
+│   ├── tracks_minmax_scaled.csv
+│   └── tracks_standard_scaled.csv
+├── folder_structure.txt
+├── models
+│   └── kmeans_model_11.pkl
+├── notebooks
+│   ├── 1_data_collection.ipynb
+│   ├── 2_data_processing.ipynb
+│   ├── 3_spotify_api.ipynb
+│   ├── 4_spotify_genre.ipynb
+│   ├── 5_modeling.ipynb
+│   └── 6_recommender_test.ipynb
+└── scaler
+    ├── standard_scaler.pkl
+    └── tracks_minmax_scaler.pkl
+
+8 directories, 29 files
