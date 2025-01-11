@@ -8,7 +8,9 @@ The Song Recommender is an intelligent music recommendation system designed to d
 
 ![Demo](/app/DEMO.gif)
 
+## APP
 
+https://filipdjordjevic222-song-recommender-apprecommender-app-qnceia.streamlit.app
 
 ## Methodology
 
