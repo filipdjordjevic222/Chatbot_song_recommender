@@ -22,9 +22,9 @@ The Million Song Dataset provides the core data for song analysis and clustering
 
 Clustering:
 
-The Elbow Method and Silhouette Score were used to evaluate and choose the optimal number of clusters.
+The Elbow Method and Silhouette Score were used to evaluate and choose the optimal number of clusters. The KMeans algorithm was applied with 11 clusters for song recommendation.
 
-The KMeans algorithm was applied with 11 clusters for song recommendation.
+An 11-cluster solution was applied to the dataset despite the optimal number of clusters, as determined by the Silhouette Score, being 2. While a lower number of clusters generally maximizes the Silhouette Score, it does not adequately capture the diversity and complexity of the dataset, especially given its size of more than9,000 songs. A higher number of clusters (11) was chosen to strike a balance between interpretability and granularity, ensuring a more meaningful segmentation of the dataset.
 
 
 ![Elbow-silhouette](/app/clustering.png)    
