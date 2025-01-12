@@ -14,11 +14,25 @@ from spotipy.oauth2 import SpotifyOAuth
 # Load environment variables from .env file
 load_dotenv()
 
-# Now you can access the environment variables
+# Get credentials with error handling
 client_id = os.getenv('SPOTIFY_CLIENT_ID')
 client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
 
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id, client_secret))
+if not client_id or not client_secret:
+    raise ValueError(
+        "Spotify API credentials not found. Please ensure SPOTIFY_CLIENT_ID and "
+        "SPOTIFY_CLIENT_SECRET are set in your .env file"
+    )
+
+try:
+    spotify = spotipy.Spotify(
+        client_credentials_manager=SpotifyClientCredentials(
+            client_id=client_id,
+            client_secret=client_secret
+        )
+    )
+except Exception as e:
+    raise Exception(f"Failed to initialize Spotify client: {str(e)}")
 
 
 
