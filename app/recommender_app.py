@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 from functions import search_spotify_tracks, get_recommendations
+#import sys
+#sys.path.append('./')
 #2.load data
 def load_data():
     return pd.read_csv('../data/7_clustered_dataset.csv')

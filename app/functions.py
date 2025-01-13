@@ -11,8 +11,11 @@ import pickle
 from spotipy.oauth2 import SpotifyOAuth
 import streamlit as st
 
-# Use Streamlit secrets instead of environment variables
+# Debug: Print current directory
+print(f"Current working directory: {os.getcwd()}")
+
 try:
+    # Initialize Spotify client with secrets
     spotify = spotipy.Spotify(
         client_credentials_manager=SpotifyClientCredentials(
             client_id=st.secrets["SPOTIFY_CLIENT_ID"],
@@ -20,9 +23,12 @@ try:
         )
     )
 except Exception as e:
-    raise Exception(f"Failed to initialize Spotify client: {str(e)}")
-
-print("Available secrets:", st.secrets.list_secrets())
+    st.error(f"""
+    Failed to initialize Spotify client. 
+    Error: {str(e)}
+    Working directory: {os.getcwd()}
+    """)
+    raise
 
 def search_spotify_tracks(query, limit=10):
     """
