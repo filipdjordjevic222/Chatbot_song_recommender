@@ -102,7 +102,7 @@ def get_recommendations(search_results, user_selection_index):
 
 
     # Load the clustered dataset and filter for the cluster
-    clustered_df = pd.read_csv('../data/7_clustered_dataset.csv')
+    clustered_df = pd.read_csv('./data/7_clustered_dataset.csv')
     clustered_df_filtered = clustered_df[clustered_df['cluster'] == cluster_prediction[0]]
 
     # Get the top 10 most popular songs from the same cluster
