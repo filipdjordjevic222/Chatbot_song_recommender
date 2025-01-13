@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 import os
 import time
 import spotipy
@@ -10,31 +9,20 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 import pickle
 from spotipy.oauth2 import SpotifyOAuth
+import streamlit as st
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Get credentials with error handling
-client_id = os.getenv('SPOTIFY_CLIENT_ID')
-client_secret = os.getenv('SPOTIFY_CLIENT_SECRET')
-
-if not client_id or not client_secret:
-    raise ValueError(
-        "Spotify API credentials not found. Please ensure SPOTIFY_CLIENT_ID and "
-        "SPOTIFY_CLIENT_SECRET are set in your .env file"
-    )
-
+# Use Streamlit secrets instead of environment variables
 try:
     spotify = spotipy.Spotify(
         client_credentials_manager=SpotifyClientCredentials(
-            client_id=client_id,
-            client_secret=client_secret
+            client_id=st.secrets["SPOTIFY_CLIENT_ID"],
+            client_secret=st.secrets["SPOTIFY_CLIENT_SECRET"]
         )
     )
 except Exception as e:
     raise Exception(f"Failed to initialize Spotify client: {str(e)}")
 
-
+print("Available secrets:", st.secrets.list_secrets())
 
 def search_spotify_tracks(query, limit=10):
     """
