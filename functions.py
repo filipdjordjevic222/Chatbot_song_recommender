@@ -15,7 +15,7 @@ import streamlit as st
 print(f"Current working directory: {os.getcwd()}")
 
 try:
-    # Initialize Spotify client with secrets
+    # Initialize Spotify client with environment variables
     spotify = spotipy.Spotify(
         client_credentials_manager=SpotifyClientCredentials(
             client_id=st.secrets["SPOTIFY_CLIENT_ID"],
@@ -27,6 +27,7 @@ except Exception as e:
     Failed to initialize Spotify client. 
     Error: {str(e)}
     Working directory: {os.getcwd()}
+    Please ensure SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET are set in your .env file
     """)
     raise
 

@@ -1,8 +1,14 @@
-# Song Recommender
+# Music Recommendation Chatbot
 
 ## Overview
 
-The Song Recommender is an intelligent music recommendation system designed to deliver personalized song suggestions based on user preferences. Based on the Spotify API, Million Song Dataset and Bilboard Hot 100 to provide user personalaised recommendations. It integrates the Spotify API and the Million Song Dataset, utilizing clustering techniques to group similar songs and suggest tracks based on user preferences.
+The ***Music Recommendation Chatbot*** is an intelligent music recommendation system that delivers personalized song suggestions based on user preferences. It leverages the Spotify API, the Million Song Dataset, and Billboard Hot 100 data to provide highly accurate and user-tailored recommendations. With an interactive Streamlit app, users can explore personalized song recommendations and view detailed results in a user-friendly interface.
+
+App starts by user interaction with chatbot, entering a favorite song. Then the app will fetch similar tracks using the Spotify API. Leveraging clustering techniques, it suggests related tracks along with detailed information such as album, artist, genres, and release date, complete with Spotify links for easy listening. Previous recommendations remain visible, ensuring a seamless and engaging discovery experience.
+
+## Presentation
+
+https://www.canva.com/design/DAGcXZHNbTk/Jc7QEMEfB_22wc7jQzTcfQ/edit
 
 ## Demo
 
@@ -10,24 +16,48 @@ The Song Recommender is an intelligent music recommendation system designed to d
 
 ## APP
 
-https://filipdjordjevic222-song-recommender-apprecommender-app-qnceia.streamlit.app
+
+
+## Features
+
+- Personalized Recommendations: Suggests songs based on the user’s input, such as favorite tracks or artists.
+
+- Data Integration: Combines Spotify API, Million Song Dataset, and Billboard Hot 100 for enhanced data richness.
+
+- Clustering Techniques: Utilizes KMeans clustering to group similar songs and recommend tracks with precision.
+
+- Interactive App: User-friendly Streamlit interface for exploring recommendations and song details.
+
+- **AI-Powered Chatbot:** A conversational assistant powered by OpenAI helps users discover personalized song recommendations and explore music-related queries.
+
 
 ## Methodology
 
-The Song Recommender combines Billboard Hot 100 data and the Million Song Dataset, cleans and merges the datasets for consistency and accuracy, and enriches them with additional song features fetched via the Spotify API. Using clustering techniques, the project determines optimal song groups with KMeans, selecting 11 clusters based on evaluation metrics. The recommendation system suggests songs by identifying cluster similarities, with an optional filter for popular tracks. Finally, an interactive Streamlit app allows users to explore personalized song recommendations and view detailed results in a user-friendly interface.
+***Data Sources:***
 
-Dataset: 
+Million Song Dataset: The core dataset for song analysis and clustering.
 
-The Million Song Dataset provides the core data for song analysis and clustering.
+Billboard Hot 100: Provides information on popular and trending tracks.
 
-Clustering:
+Spotify API: Enriches the dataset with additional song features like tempo, danceability, and more.
 
-The Elbow Method and Silhouette Score were used to evaluate and choose the optimal number of clusters. The KMeans algorithm was applied with 11 clusters for song recommendation.
+***Data Processing:***
 
-An 11-cluster solution was applied to the dataset despite the optimal number of clusters, as determined by the Silhouette Score, being 2. While a lower number of clusters generally maximizes the Silhouette Score, it does not adequately capture the diversity and complexity of the dataset, especially given its size of more than9,000 songs. A higher number of clusters (11) was chosen to strike a balance between interpretability and granularity, ensuring a more meaningful segmentation of the dataset.
+Data Cleaning and Merging: Ensures consistency and accuracy by combining and processing multiple datasets.
 
+Feature Enrichment: Fetches additional song attributes via the Spotify API to enhance recommendations.
 
-![Elbow-silhouette](/media/clustering.png)    
+***Clustering:***
+
+Optimal Clusters:
+
+Evaluation Techniques: The Elbow Method and Silhouette Score were used to determine the optimal number of clusters.
+
+Final Choice: An 11-cluster solution was implemented to balance interpretability and granularity, providing meaningful segmentation for over 9,000 songs.
+
+***Recommendation Engine:***
+
+Cluster-Based Suggestions: Identifies cluster similarities to recommend songs that align with the user’s preferences.   
 
 ## Resources
 
@@ -40,7 +70,7 @@ Bliboard hot 100 https://www.billboard.com/charts/hot-100/
 
 ## Requirements
 
-Python, Spotify API credentials, spotipy, Streamlit and other dependancies listed in requirements.txt
+Python, Spotify API credentials, OpenAI API credentials, spotipy, Streamlit and other dependancies listed in requirements.txt
 
 ## Steps To Run
 
@@ -59,10 +89,20 @@ Update .env file with your Spotify API credentials:
 
 ```SPOTIFY_CLIENT_SECRET=<your-client-secret>```
 
+```OPENAI_API_KEY=<your-openai-api-key>```
+
 You can get these credentials from the Spotify Developer Platform.
+You can get your OpenAI API key from https://platform.openai.com/
 
 Start the application:
 
 ```streamlit run app.py```
 
+## Further Development
+
+- Add more features to the chatbot (voice to text search)
+- Add more data sources
+- Improve clustering for higher accuracy
+- Improve recommendation engine to add mood and genre
+- Add more user data storage mechanisms
 
